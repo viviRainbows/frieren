@@ -1,0 +1,50 @@
+{
+  "categories": [
+    {"name": "T恤", "icon": "👕", "color": "#FF6B6B"},
+    {"name": "衬衫", "icon": "👔", "color": "#4ECDC4"},
+    {"name": "卫衣", "icon": "🧥", "color": "#FFE66D"},
+    {"name": "毛衣", "icon": "🧶", "color": "#95E1D3"},
+    {"name": "外套", "icon": "🧥", "color": "#DDA0DD"},
+    {"name": "羽绒服", "icon": "🧥", "color": "#00d9ff"},
+    {"name": "牛仔裤", "icon": "👖", "color": "#FFB347"},
+    {"name": "休闲裤", "icon": "👖", "color": "#98D8C8"},
+    {"name": "裙子", "icon": "👗", "color": "#F7DC6F"},
+    {"name": "运动裤", "icon": "👖", "color": "#BB8FCE"},
+    {"name": "运动鞋", "icon": "👟", "color": "#85C1E9"},
+    {"name": "皮鞋", "icon": "👞", "color": "#B0BEC5"},
+    {"name": "帆布鞋", "icon": "👟", "color": "#FF8A80"},
+    {"name": "帽子", "icon": "🧢", "color": "#CE93D8"},
+    {"name": "围巾", "icon": "🧣", "color": "#80DEEA"},
+    {"name": "腰带", "icon": "👔", "color": "#FFCC80"},
+    {"name": "手表", "icon": "⌚", "color": "#EF9A9A"},
+    {"name": "包袋", "icon": "👜", "color": "#C5E1A5"}
+  ],
+  "seasons": [
+    {"name": "春季", "icon": "🌸"},
+    {"name": "夏季", "icon": "☀️"},
+    {"name": "秋季", "icon": "🍂"},
+    {"name": "冬季", "icon": "❄️"},
+    {"name": "四季通用", "icon": "🌍"}
+  ],
+  "occasions": [
+    {"name": "日常", "icon": "🏠"},
+    {"name": "商务", "icon": "💼"},
+    {"name": "正式", "icon": "👔"},
+    {"name": "运动", "icon": "🏃"},
+    {"name": "约会", "icon": "💕"},
+    {"name": "休闲", "icon": "🧢"}
+  ],
+  "colors": [
+    {"name": "白色", "icon": "⚪"},
+    {"name": "黑色", "icon": "⚫"},
+    {"name": "灰色", "icon": "◻️"},
+    {"name": "蓝色", "icon": "🔵"},
+    {"name": "牛仔蓝", "icon": "👖"},
+    {"name": "卡其色", "icon": "🟤"},
+    {"name": "棕色", "icon": "🟫"},
+    {"name": "红色", "icon": "🔴"},
+    {"name": "粉色", "icon": "💗"},
+    {"name": "绿色", "icon": "🟢"},
+    {"name": "米色", "icon": "🟡"}
+  ]
+}

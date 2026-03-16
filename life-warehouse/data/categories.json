@@ -1,0 +1,16 @@
+{
+  "categories": [
+    {"name": "食品日用", "icon": "🛒", "color": "#FF6B6B"},
+    {"name": "服装配饰", "icon": "👕", "color": "#4ECDC4"},
+    {"name": "厨房用具", "icon": "🍳", "color": "#FFE66D"},
+    {"name": "清洁用品", "icon": "🧹", "color": "#95E1D3"},
+    {"name": "电子产品", "icon": "📱", "color": "#DDA0DD"},
+    {"name": "智能设备", "icon": "🎯", "color": "#00d9ff"},
+    {"name": "宠物用品", "icon": "🐱", "color": "#FFB347"},
+    {"name": "医疗保健", "icon": "💊", "color": "#98D8C8"},
+    {"name": "运动户外", "icon": "⚽", "color": "#F7DC6F"},
+    {"name": "文具书籍", "icon": "📚", "color": "#BB8FCE"},
+    {"name": "家具家居", "icon": "🛋️", "color": "#85C1E9"},
+    {"name": "其他", "icon": "📦", "color": "#B0BEC5"}
+  ]
+}
