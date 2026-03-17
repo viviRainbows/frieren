@@ -6,7 +6,7 @@
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
-const SITE_URL = process.env.SITE_URL || 'https://viviclaw.github.io/folian';
+const SITE_URL = process.env.SITE_URL || 'https://vivirainbows.github.io/frieren';
 
 // 路径配置
 const PATHS = {
