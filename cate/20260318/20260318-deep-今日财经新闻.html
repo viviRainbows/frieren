@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>魔法书房 - Frieren</title>
+  <title>20260318-deep-今日财经新闻 - Frieren</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
@@ -850,147 +850,49 @@ a:hover {
 }
 
 
-/* ==================== 区块标题 ==================== */
-.section-header {
+/* ==================== 基础布局 ==================== */
+.posts {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 24px;
-  background: linear-gradient(135deg, 
-    rgba(139, 92, 246, 0.12), 
-    rgba(236, 72, 153, 0.08)
-  );
-  border-radius: 16px;
-  border-left: 4px solid #8b5cf6;
-  margin: 32px 0 24px;
-  position: relative;
-  overflow: hidden;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.section-header::before {
+/* ==================== 文章卡片 ==================== */
+.post-card {
+  position: relative;
+  background: linear-gradient(145deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 
+    0 10px 40px rgba(99, 102, 241, 0.15),
+    0 0 0 1px rgba(139, 92, 246, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: cardFloat 3s ease-in-out infinite;
+}
+
+.post-card::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
+  height: 2px;
   background: linear-gradient(90deg, 
     transparent, 
-    rgba(255, 255, 255, 0.08), 
+    #8b5cf6, 
+    #ec4899, 
+    #8b5cf6, 
     transparent
   );
-  transform: translateX(-100%);
-  animation: shimmer 3s infinite;
-}
-
-@keyframes shimmer {
-  100% { transform: translateX(100%); }
-}
-
-.section-left {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.section-icon {
-  font-size: 2rem;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
-  animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
-.section-info {
-  flex: 1;
-}
-
-.section-title {
-  margin: 0;
-  color: #fff;
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-bottom: 4px;
-}
-
-.section-subtitle {
-  margin: 0;
-  color: #a78bfa;
-  font-size: 0.9rem;
   opacity: 0.8;
 }
 
-.section-badge {
-  display: flex;
-  align-items: baseline;
-  gap: 6px;
-  padding: 8px 16px;
-  background: linear-gradient(135deg, #8b5cf6, #ec4899);
-  border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
-}
-
-.badge-count {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #fff;
-}
-
-.badge-text {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-/* ==================== 魔法领域网格 ==================== */
-.realm-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 24px;
-}
-
-.realm-card {
-  position: relative;
-  display: block;
-  padding: 32px;
-  background: linear-gradient(145deg, #1e1e2e, #16213e);
-  border-radius: 24px;
-  text-decoration: none;
-  border: 1px solid rgba(139, 92, 246, 0.15);
-  overflow: hidden;
-  animation: fadeInUp 0.6s ease-out backwards;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* 背景图案 */
-.realm-bg-pattern {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: 
-    radial-gradient(circle at 20% 30%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(236, 72, 153, 0.08) 0%, transparent 50%);
-  opacity: 0.5;
-  transition: opacity 0.3s ease;
-}
-
-/* 光晕效果 */
-.realm-glow {
+.post-card::after {
+  content: '';
   position: absolute;
   top: -50%;
   left: -50%;
@@ -998,7 +900,7 @@ a:hover {
   height: 200%;
   background: radial-gradient(
     circle,
-    rgba(139, 92, 246, 0.2) 0%,
+    rgba(139, 92, 246, 0.1) 0%,
     transparent 50%
   );
   opacity: 0;
@@ -1006,427 +908,494 @@ a:hover {
   pointer-events: none;
 }
 
-.realm-card:hover .realm-glow {
+.post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 20px 60px rgba(99, 102, 241, 0.25),
+    0 0 0 1px rgba(139, 92, 246, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.post-card:hover::after {
   opacity: 1;
 }
 
-.realm-card:hover .realm-bg-pattern {
-  opacity: 1;
+@keyframes cardFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-2px); }
 }
 
-.realm-card::before {
+/* ==================== 文章头部 ==================== */
+.post-header {
+  position: relative;
+  padding: 28px 32px;
+  background: linear-gradient(135deg, 
+    rgba(139, 92, 246, 0.15) 0%, 
+    rgba(236, 72, 153, 0.08) 50%,
+    rgba(59, 130, 246, 0.1) 100%
+  );
+  border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+  overflow: hidden;
+}
+
+.post-header::before {
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
   right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, 
-    #8b5cf6, 
-    #ec4899, 
-    #8b5cf6
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(
+    circle,
+    rgba(139, 92, 246, 0.2) 0%,
+    transparent 70%
   );
-  opacity: 0.6;
-}
-
-.realm-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  border-color: rgba(139, 92, 246, 0.4);
-  box-shadow: 
-    0 16px 48px rgba(139, 92, 246, 0.3),
-    0 0 0 1px rgba(139, 92, 246, 0.3);
-}
-
-.realm-content {
-  position: relative;
-  z-index: 1;
-}
-
-/* 图标容器 */
-.realm-icon-wrapper {
-  position: relative;
-  margin-bottom: 20px;
-}
-
-.realm-icon {
-  font-size: 3.5rem;
-  display: block;
-  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4));
-  transition: transform 0.3s ease;
-}
-
-.realm-card:hover .realm-icon {
-  transform: scale(1.15) rotate(5deg);
-}
-
-/* 粒子效果 */
-.realm-particles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  transform: translate(30%, -30%);
   pointer-events: none;
 }
 
-.particle {
+/* 星星装饰 */
+.post-header::after {
+  content: '✨';
   position: absolute;
-  font-size: 0.8rem;
-  color: #a78bfa;
-  opacity: 0;
-  animation: particleFloat 3s ease-in-out infinite;
+  top: 20px;
+  right: 30px;
+  font-size: 24px;
+  opacity: 0.6;
+  animation: twinkle 2s ease-in-out infinite;
 }
 
-.particle:nth-child(1) { top: 0; left: 20%; animation-delay: 0s; }
-.particle:nth-child(2) { top: 20%; right: 10%; animation-delay: 0.5s; }
-.particle:nth-child(3) { bottom: 10%; left: 30%; animation-delay: 1s; }
-.particle:nth-child(4) { bottom: 20%; right: 20%; animation-delay: 1.5s; }
-
-@keyframes particleFloat {
-  0%, 100% { opacity: 0; transform: translateY(0) scale(0.8); }
-  50% { opacity: 1; transform: translateY(-20px) scale(1.2); }
+@keyframes twinkle {
+  0%, 100% { opacity: 0.6; transform: scale(1) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1.2) rotate(180deg); }
 }
 
-.realm-card:hover .particle {
-  opacity: 1;
-}
-
-/* 领域信息 */
-.realm-info {
-  margin-bottom: 20px;
-}
-
-.realm-name {
-  margin: 0 0 8px;
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #fff;
-  transition: color 0.3s ease;
-}
-
-.realm-desc {
-  margin: 0;
-  font-size: 0.9rem;
-  color: #cbd5e1;
-  line-height: 1.6;
-}
-
-/* 行动按钮 */
-.realm-action {
-  display: flex;
+/* ==================== 分类标签 ==================== */
+.category-tag {
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  padding-top: 16px;
-  border-top: 1px solid rgba(139, 92, 246, 0.15);
-}
-
-.action-text {
-  font-size: 0.95rem;
-  color: #a78bfa;
-  font-weight: 500;
-}
-
-.action-arrow {
-  color: #a78bfa;
-  font-size: 1.2rem;
-  transition: transform 0.3s ease;
-}
-
-.realm-card:hover .action-arrow {
-  transform: translateX(8px);
-}
-
-/* ==================== 魔法卷轴网格 ==================== */
-.scroll-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 16px;
-}
-
-.scroll-card {
-  position: relative;
-  display: block;
-  padding: 20px 24px;
+  gap: 6px;
+  padding: 8px 16px;
   background: linear-gradient(135deg, 
-    rgba(30, 30, 46, 0.8), 
-    rgba(22, 33, 62, 0.6)
+    rgba(139, 92, 246, 0.25), 
+    rgba(236, 72, 153, 0.15)
   );
-  border-radius: 16px;
-  text-decoration: none;
-  border: 1px solid rgba(139, 92, 246, 0.1);
-  overflow: hidden;
-  animation: fadeInUp 0.6s ease-out backwards;
+  border-radius: 20px;
+  color: #c4b5fd;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  box-shadow: 0 2px 10px rgba(139, 92, 246, 0.2);
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.scroll-glow {
+.category-tag::before {
+  content: '';
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(
-    circle at left center,
-    rgba(139, 92, 246, 0.15) 0%,
-    transparent 60%
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.2), 
+    transparent
   );
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: left 0.5s ease;
 }
 
-.scroll-card:hover .scroll-glow {
-  opacity: 1;
+.category-tag:hover::before {
+  left: 100%;
 }
 
-.scroll-card::before {
+.category-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+/* ==================== 文章标题 ==================== */
+.post-title {
+  font-size: 1.8rem;
+  margin-top: 16px;
+  color: #fff;
+  font-weight: 600;
+  line-height: 1.4;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+  padding-left: 20px;
+}
+
+.post-title::before {
   content: '';
   position: absolute;
   left: 0;
-  top: 0;
-  bottom: 0;
+  top: 50%;
+  transform: translateY(-50%);
   width: 4px;
+  height: 70%;
   background: linear-gradient(180deg, #8b5cf6, #ec4899);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
 }
 
-.scroll-card:hover::before {
-  opacity: 1;
+/* ==================== 文章内容 ==================== */
+.post-content {
+  padding: 32px;
+  line-height: 1.9;
+  color: #cbd5e1;
+  font-size: 1.05rem;
 }
 
-.scroll-card:hover {
-  transform: translateX(8px);
+/* 标题样式 */
+.post-content h1, 
+.post-content h2, 
+.post-content h3 {
+  color: #fff;
+  margin: 32px 0 16px;
+  font-weight: 600;
+  position: relative;
+  padding-left: 16px;
+}
+
+.post-content h1::before,
+.post-content h2::before,
+.post-content h3::before {
+  content: '✨';
+  position: absolute;
+  left: -5px;
+  font-size: 0.8em;
+  opacity: 0.7;
+}
+
+.post-content h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #fff, #c4b5fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.post-content h2 {
+  font-size: 1.6rem;
+  color: #e0e7ff;
+}
+
+.post-content h3 {
+  font-size: 1.3rem;
+  color: #ddd6fe;
+}
+
+/* 段落 */
+.post-content p {
+  margin-bottom: 16px;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* 链接 */
+.post-content a {
+  color: #a78bfa;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(167, 139, 250, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.post-content a::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #a78bfa, #ec4899);
+  transition: width 0.3s ease;
+}
+
+.post-content a:hover {
+  color: #c4b5fd;
+  border-bottom-color: transparent;
+}
+
+.post-content a:hover::after {
+  width: 100%;
+}
+
+/* 引用块 */
+.post-content blockquote {
+  position: relative;
+  border-left: 4px solid #8b5cf6;
+  padding: 16px 20px 16px 24px;
+  margin: 24px 0;
+  color: #cbd5e1;
+  background: linear-gradient(135deg, 
+    rgba(139, 92, 246, 0.1), 
+    rgba(236, 72, 153, 0.05)
+  );
+  border-radius: 0 12px 12px 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.post-content blockquote::before {
+  content: '"';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 2.5rem;
+  color: rgba(139, 92, 246, 0.3);
+  font-family: Georgia, serif;
+}
+
+/* 行内代码 */
+.post-content code {
   background: linear-gradient(135deg, 
     rgba(139, 92, 246, 0.15), 
-    rgba(22, 33, 62, 0.8)
+    rgba(59, 130, 246, 0.1)
   );
-  border-color: rgba(139, 92, 246, 0.3);
-  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.2);
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 0.9em;
+  color: #c4b5fd;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  font-family: 'Fira Code', 'Courier New', monospace;
 }
 
-.scroll-content {
+/* 代码块 */
+.post-content pre {
   position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  gap: 16px;
+  background: linear-gradient(135deg, #1e1e2e, #2d2d44);
+  padding: 24px;
+  border-radius: 16px;
+  overflow-x: auto;
+  margin: 24px 0;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  box-shadow: 
+    0 8px 30px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
-/* 卷轴图标 */
-.scroll-icon-wrapper {
-  position: relative;
-  flex-shrink: 0;
-}
-
-.scroll-icon {
-  font-size: 2.2rem;
-  display: block;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
-  transition: transform 0.3s ease;
-}
-
-.scroll-card:hover .scroll-icon {
-  transform: scale(1.1);
-}
-
-.scroll-number {
-  position: absolute;
-  bottom: -6px;
-  right: -8px;
-  font-size: 0.7rem;
-  color: #a78bfa;
-  background: rgba(139, 92, 246, 0.2);
-  padding: 2px 6px;
-  border-radius: 8px;
-  font-weight: 600;
-}
-
-/* 卷轴信息 */
-.scroll-info {
-  flex: 1;
-  min-width: 0;
-}
-
-.scroll-title {
-  margin: 0 0 6px;
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: #e0e7ff;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  transition: color 0.3s ease;
-}
-
-.scroll-card:hover .scroll-title {
-  color: #fff;
-}
-
-.scroll-meta {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.85rem;
-  color: #94a3b8;
-}
-
-.meta-item {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.meta-divider {
-  color: rgba(139, 92, 246, 0.3);
-}
-
-/* 行动图标 */
-.scroll-action {
-  flex-shrink: 0;
-}
-
-.action-icon {
-  display: block;
-  font-size: 1.5rem;
-  opacity: 0.4;
-  transition: all 0.3s ease;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-}
-
-.scroll-card:hover .action-icon {
-  opacity: 1;
-  transform: scale(1.2) rotate(15deg);
-}
-
-/* ==================== 空状态 ==================== */
-.empty-state {
-  text-align: center;
-  padding: 80px 40px;
-  background: linear-gradient(135deg, 
-    rgba(30, 30, 46, 0.5), 
-    rgba(22, 33, 62, 0.3)
-  );
-  border-radius: 24px;
-  border: 2px dashed rgba(139, 92, 246, 0.3);
-  margin-top: 40px;
-  position: relative;
-  overflow: hidden;
-}
-
-.empty-illustration {
-  position: relative;
-  margin-bottom: 32px;
-}
-
-.empty-icon {
-  font-size: 5rem;
-  opacity: 0.8;
-  animation: float 3s ease-in-out infinite;
-  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4));
-}
-
-.empty-sparkles {
+.post-content pre::before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  pointer-events: none;
+  height: 30px;
+  background: rgba(139, 92, 246, 0.1);
+  border-bottom: 1px solid rgba(139, 92, 246, 0.2);
 }
 
-.sparkle {
+.post-content pre::after {
+  content: 'CODE';
   position: absolute;
-  font-size: 1.2rem;
-  color: #a78bfa;
-  animation: sparkleFloat 2s ease-in-out infinite;
+  top: 8px;
+  left: 16px;
+  font-size: 0.7rem;
+  color: rgba(139, 92, 246, 0.6);
+  font-weight: 600;
+  letter-spacing: 2px;
 }
 
-.sparkle:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
-.sparkle:nth-child(2) { top: 30%; right: 25%; animation-delay: 0.5s; }
-.sparkle:nth-child(3) { bottom: 20%; left: 30%; animation-delay: 1s; }
-.sparkle:nth-child(4) { bottom: 30%; right: 20%; animation-delay: 1.5s; }
-
-@keyframes sparkleFloat {
-  0%, 100% { 
-    opacity: 0.3;
-    transform: translateY(0) scale(0.8);
-  }
-  50% { 
-    opacity: 1;
-    transform: translateY(-15px) scale(1.2);
-  }
+.post-content pre code {
+  background: none;
+  padding: 0;
+  border: none;
+  color: #e0e7ff;
+  display: block;
+  margin-top: 15px;
 }
 
-.empty-content {
+/* 图片 */
+.post-content img {
+  max-width: 100%;
+  border-radius: 16px;
+  margin: 24px 0;
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(139, 92, 246, 0.2);
+  transition: all 0.3s ease;
+}
+
+.post-content img:hover {
+  transform: scale(1.02);
+  box-shadow: 
+    0 15px 50px rgba(0, 0, 0, 0.4),
+    0 0 0 2px rgba(139, 92, 246, 0.3);
+}
+
+/* 表格 */
+.post-content table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 24px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.post-content th, 
+.post-content td {
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  padding: 14px 18px;
+  text-align: left;
+}
+
+.post-content th {
+  background: linear-gradient(135deg, 
+    rgba(139, 92, 246, 0.2), 
+    rgba(59, 130, 246, 0.15)
+  );
+  color: #c4b5fd;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.post-content td {
+  background: rgba(30, 30, 46, 0.5);
+}
+
+.post-content tr:hover td {
+  background: rgba(139, 92, 246, 0.1);
+}
+
+/* 列表 */
+.post-content ul, 
+.post-content ol {
+  margin: 16px 0;
+  padding-left: 28px;
+}
+
+.post-content li {
+  margin-bottom: 12px;
   position: relative;
-  z-index: 1;
 }
 
-.empty-title {
-  margin: 0 0 12px;
-  font-size: 1.5rem;
+.post-content ul li::before {
+  content: '✦';
+  position: absolute;
+  left: -20px;
   color: #a78bfa;
+  font-size: 0.9em;
+}
+
+li::marker {
+  display: none !important;
+  font-size: 0px !important;
+}
+
+.post-content ol li::before {
+  content: counter(list-item);
+  position: absolute;
+  left: -28px;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: 600;
 }
 
-.empty-description {
-  margin: 0;
-  font-size: 1rem;
-  color: #64748b;
-  line-height: 1.6;
+/* 分割线 */
+.post-content hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(139, 92, 246, 0.5), 
+    rgba(236, 72, 153, 0.5), 
+    rgba(139, 92, 246, 0.5), 
+    transparent
+  );
+  margin: 32px 0;
+  position: relative;
+}
+
+.post-content hr::after {
+  content: '✧';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #1a1a2e;
+  padding: 0 12px;
+  color: #a78bfa;
+  font-size: 1.2rem;
 }
 
 /* ==================== 响应式设计 ==================== */
 @media (max-width: 768px) {
-  .section-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-    padding: 16px 20px;
+  .posts {
+    padding: 12px;
   }
   
-  .section-left {
-    width: 100%;
+  .post-card {
+    border-radius: 16px;
   }
   
-  .section-badge {
-    width: 100%;
-    justify-content: center;
+  .post-header {
+    padding: 20px 24px;
   }
   
-  .realm-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
+  .post-title {
+    font-size: 1.4rem;
+    padding-left: 16px;
   }
   
-  .realm-card {
-    padding: 24px;
+  .post-content {
+    padding: 24px 20px;
   }
   
-  .realm-icon {
-    font-size: 3rem;
+  .post-content h1 {
+    font-size: 1.6rem;
   }
   
-  .scroll-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
+  .post-content h2 {
+    font-size: 1.3rem;
   }
   
-  .scroll-content {
-    flex-wrap: wrap;
+  .post-content h3 {
+    font-size: 1.1rem;
   }
   
-  .scroll-info {
-    width: 100%;
+  .post-content pre {
+    padding: 16px;
+    border-radius: 12px;
   }
 }
 
 /* ==================== 暗色模式优化 ==================== */
 @media (prefers-color-scheme: dark) {
-  .realm-card,
-  .scroll-card {
+  .post-card {
     background: linear-gradient(145deg, #0a0a14, #1a1a2e);
   }
+}
+
+/* ==================== 滚动条美化 ==================== */
+.post-content pre::-webkit-scrollbar {
+  height: 8px;
+}
+
+.post-content pre::-webkit-scrollbar-track {
+  background: rgba(139, 92, 246, 0.1);
+  border-radius: 4px;
+}
+
+.post-content pre::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #8b5cf6, #ec4899);
+  border-radius: 4px;
+}
+
+.post-content pre::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg, #a78bfa, #f472b6);
 }
 
     #frieren-particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
@@ -1444,211 +1413,91 @@ a:hover {
     <div class="nav-links">
       <a href="https://vivirainbows.github.io/frieren/" class="nav-link ">🏠 首页</a><a href="https://vivirainbows.github.io/frieren/cate" class="nav-link ">📚 书房</a><a href="https://vivirainbows.github.io/frieren/accounting.html" class="nav-link ">💰 账簿</a><a href="https://vivirainbows.github.io/frieren/life-warehouse.html" class="nav-link ">📦 仓库</a><a href="https://vivirainbows.github.io/frieren/closet.html" class="nav-link ">👔 衣橱</a><a href="https://vivirainbows.github.io/frieren/dinner-picker.html" class="nav-link ">🎲 今晚吃啥</a><a href="https://vivirainbows.github.io/frieren/food.html" class="nav-link ">🍽️ 美食</a><a href="https://vivirainbows.github.io/frieren/training.html" class="nav-link ">🧘 修行</a>
     </div>
-  </nav><header class="frieren-header">
-    <h1>🔮 魔法书房</h1>
-    <p class="subtitle">探索魔法世界的奥秘</p>
-  </header>
-      <div class="section-header">
-        <div class="section-left">
-          <span class="section-icon">🌌</span>
-          <div class="section-info">
-            <h3 class="section-title">探索领域</h3>
-            <p class="section-subtitle">选择一个魔法领域开始探索</p>
-          </div>
+  </nav>
+    <div class="posts">
+      <article class="post-card">
+        <div class="post-header">
+          <span class="category-tag">✦ 文章</span>
+          <h2 class="post-title">20260318-deep-今日财经新闻</h2>
         </div>
-        <div class="section-badge">
-          <span class="badge-count">8</span>
-          <span class="badge-text">个领域</span>
+        <div class="post-content">
+          <h1>📊 今日财经新闻深度分析</h1>
+<p><em>来源: AI专业分析 | 2026-03-18 11:14</em></p>
+<hr>
+<h2>🔥 今日核心热点</h2>
+<p><strong>1. <a href="https://www.tomshardware.com/video-games/console-gaming/microsofts-unhackable-xbox-one-has-been-hacked-by-bliss-the-2013-console-finally-fell-to-voltage-glitching-allowing-the-loading-of-unsigned-code-at-every-level">Microsoft&#39;s &#39;unhackable&#39; Xbox One has been hacked by &#39;Bliss&#39;</a></strong></p>
+<ul>
+<li>热度: 569 points</li>
+</ul>
+<p><strong>2. <a href="https://terathon.com/blog/decade-slug.html">A Decade of Slug</a></strong></p>
+<ul>
+<li>热度: 459 points</li>
+</ul>
+<p><strong>3. <a href="https://fidget-spinner.github.io/posts/jit-on-track.html">Python 3.15&#39;s JIT is now back on track</a></strong></p>
+<ul>
+<li>热度: 292 points</li>
+</ul>
+<p><strong>4. <a href="https://blog.platformatic.dev/why-nodejs-needs-a-virtual-file-system">Node.js needs a virtual file system</a></strong></p>
+<ul>
+<li>热度: 233 points</li>
+</ul>
+<p><strong>5. <a href="https://github.com/gsd-build/get-shit-done">Get Shit Done: A Meta-Prompting, Context Engineering and Spec-Driven Dev System</a></strong></p>
+<ul>
+<li>热度: 216 points</li>
+</ul>
+<hr>
+<h2>一、全球市场动态</h2>
+<h3>全球资本市场</h3>
+<ul>
+<li><a href="https://wallstreetcn.com/articles/3767779">美股存储全线走高，西部数据、希捷、闪迪大涨创新高，美光踏入“5000亿美元俱乐部”</a></li>
+<li><a href="https://wallstreetcn.com/charts/41958750">交易员热议“美国国家队”干预油价</a></li>
+<li><a href="https://wallstreetcn.com/member/articles/3767722">服务器电源革命：AI算力时代的“电力心脏”，千亿市场迎黄金周期</a></li>
+<li><a href="https://36kr.com/newsflashes/3727860664204419">恒生科技指数日内跌幅扩大至1%</a></li>
+<li><a href="https://36kr.com/newsflashes/3727859924581512">三大指数集体翻绿</a></li>
+</ul>
+<h3>国内政策动向</h3>
+<ul>
+<li><a href="https://36kr.com/newsflashes/3727771446983555">央行开展205亿元7天逆回购操作</a></li>
+</ul>
+<h3>产业趋势观察</h3>
+<ul>
+<li><a href="https://wallstreetcn.com/articles/3767798">创业板震荡上涨0.5%，算力硬件全线反弹，恒科指跌近1%，腾讯音乐暴跌超20%</a></li>
+<li><a href="https://wallstreetcn.com/articles/3767787">拿下大单“大涨”，宣布发债后“大跌”，“AI云新贵”Nebius的股东“很纠结”</a></li>
+<li><a href="https://wallstreetcn.com/articles/3767783">上市首日暴涨700%！这家“无人机AI”公司IPO被爆炒</a></li>
+<li><a href="https://wallstreetcn.com/member/articles/3767626">AI推理时代：英伟达如何打造下一轮算力浪潮的王冠？</a></li>
+<li><a href="https://wallstreetcn.com/articles/3767775">光通信大会（2026 OFC）：电信大会变成AI大会，焦点是“如何在更小空间塞入更高密度光纤&quot;</a></li>
+</ul>
+<h2>二、深度分析</h2>
+<h3>今日财经新闻核心矛盾</h3>
+<p>近期市场主要围绕以下核心逻辑展开：</p>
+<ol>
+<li><strong>政策预期与基本面的博弈</strong>：宏观政策持续发力，但效果仍待验证</li>
+<li><strong>估值与业绩的再平衡</strong>：部分板块估值偏高，需业绩验证</li>
+<li><strong>外部环境的边际变化</strong>：需关注美联储政策走向及地缘局势</li>
+</ol>
+<h2>三、投资机会与风险提示</h2>
+<h3>核心投资主线</h3>
+<ul>
+<li>关注政策受益板块</li>
+<li>业绩确定性强的行业龙头</li>
+<li>具备成长性的新兴产业</li>
+</ul>
+<h3>风险提示</h3>
+<ul>
+<li>全球经济复苏不及预期</li>
+<li>政策效果存在滞后性</li>
+<li>市场波动风险</li>
+</ul>
+<h2>四、总结判断</h2>
+<p>综合来看，今日财经新闻领域当前处于政策密集发力期，市场情绪有所回暖，但仍需关注后续政策落地情况和宏观经济数据。
+建议投资者保持审慎乐观，把握结构性机会。</p>
+<hr>
+<p><em>本文由 AI 专业分析 | 2026-03-18</em></p>
+
         </div>
-      </div>
-      <div class="realm-grid">
-        
-            <a href="https://vivirainbows.github.io/frieren/cate/20260317/index.html" class="realm-card" style="animation-delay: 0s">
-              <div class="realm-bg-pattern"></div>
-              <div class="realm-glow"></div>
-              <div class="realm-content">
-                <div class="realm-icon-wrapper">
-                  <span class="realm-icon">🪄</span>
-                  <div class="realm-particles">
-                    <span class="particle">✦</span>
-                    <span class="particle">✧</span>
-                    <span class="particle">✦</span>
-                  </div>
-                </div>
-                <div class="realm-info">
-                  <h4 class="realm-name">20260317</h4>
-                  <p class="realm-desc">点击探索这个神秘领域</p>
-                </div>
-                <div class="realm-action">
-                  <span class="action-text">进入领域</span>
-                  <span class="action-arrow">→</span>
-                </div>
-              </div>
-            </a>
-          
-            <a href="https://vivirainbows.github.io/frieren/cate/20260318/index.html" class="realm-card" style="animation-delay: 0.08s">
-              <div class="realm-bg-pattern"></div>
-              <div class="realm-glow"></div>
-              <div class="realm-content">
-                <div class="realm-icon-wrapper">
-                  <span class="realm-icon">🪄</span>
-                  <div class="realm-particles">
-                    <span class="particle">✦</span>
-                    <span class="particle">✧</span>
-                    <span class="particle">✦</span>
-                  </div>
-                </div>
-                <div class="realm-info">
-                  <h4 class="realm-name">20260318</h4>
-                  <p class="realm-desc">点击探索这个神秘领域</p>
-                </div>
-                <div class="realm-action">
-                  <span class="action-text">进入领域</span>
-                  <span class="action-arrow">→</span>
-                </div>
-              </div>
-            </a>
-          
-            <a href="https://vivirainbows.github.io/frieren/cate/aiNews/index.html" class="realm-card" style="animation-delay: 0.16s">
-              <div class="realm-bg-pattern"></div>
-              <div class="realm-glow"></div>
-              <div class="realm-content">
-                <div class="realm-icon-wrapper">
-                  <span class="realm-icon">✨</span>
-                  <div class="realm-particles">
-                    <span class="particle">✦</span>
-                    <span class="particle">✧</span>
-                    <span class="particle">✦</span>
-                  </div>
-                </div>
-                <div class="realm-info">
-                  <h4 class="realm-name">AI 科技领域</h4>
-                  <p class="realm-desc">探索人工智能的前沿技术与动态</p>
-                </div>
-                <div class="realm-action">
-                  <span class="action-text">进入领域</span>
-                  <span class="action-arrow">→</span>
-                </div>
-              </div>
-            </a>
-          
-            <a href="https://vivirainbows.github.io/frieren/cate/daily/index.html" class="realm-card" style="animation-delay: 0.24s">
-              <div class="realm-bg-pattern"></div>
-              <div class="realm-glow"></div>
-              <div class="realm-content">
-                <div class="realm-icon-wrapper">
-                  <span class="realm-icon">📋</span>
-                  <div class="realm-particles">
-                    <span class="particle">✦</span>
-                    <span class="particle">✧</span>
-                    <span class="particle">✦</span>
-                  </div>
-                </div>
-                <div class="realm-info">
-                  <h4 class="realm-name">今日资讯站</h4>
-                  <p class="realm-desc">每日资讯，记录当下</p>
-                </div>
-                <div class="realm-action">
-                  <span class="action-text">进入领域</span>
-                  <span class="action-arrow">→</span>
-                </div>
-              </div>
-            </a>
-          
-            <a href="https://vivirainbows.github.io/frieren/cate/health/index.html" class="realm-card" style="animation-delay: 0.32s">
-              <div class="realm-bg-pattern"></div>
-              <div class="realm-glow"></div>
-              <div class="realm-content">
-                <div class="realm-icon-wrapper">
-                  <span class="realm-icon">🌿</span>
-                  <div class="realm-particles">
-                    <span class="particle">✦</span>
-                    <span class="particle">✧</span>
-                    <span class="particle">✦</span>
-                  </div>
-                </div>
-                <div class="realm-info">
-                  <h4 class="realm-name">健康养生坊</h4>
-                  <p class="realm-desc">健康生活的知识与实践</p>
-                </div>
-                <div class="realm-action">
-                  <span class="action-text">进入领域</span>
-                  <span class="action-arrow">→</span>
-                </div>
-              </div>
-            </a>
-          
-            <a href="https://vivirainbows.github.io/frieren/cate/research/index.html" class="realm-card" style="animation-delay: 0.4s">
-              <div class="realm-bg-pattern"></div>
-              <div class="realm-glow"></div>
-              <div class="realm-content">
-                <div class="realm-icon-wrapper">
-                  <span class="realm-icon">🔮</span>
-                  <div class="realm-particles">
-                    <span class="particle">✦</span>
-                    <span class="particle">✧</span>
-                    <span class="particle">✦</span>
-                  </div>
-                </div>
-                <div class="realm-info">
-                  <h4 class="realm-name">深度研究林</h4>
-                  <p class="realm-desc">深度研究与专题分析</p>
-                </div>
-                <div class="realm-action">
-                  <span class="action-text">进入领域</span>
-                  <span class="action-arrow">→</span>
-                </div>
-              </div>
-            </a>
-          
-            <a href="https://vivirainbows.github.io/frieren/cate/tech/index.html" class="realm-card" style="animation-delay: 0.48s">
-              <div class="realm-bg-pattern"></div>
-              <div class="realm-glow"></div>
-              <div class="realm-content">
-                <div class="realm-icon-wrapper">
-                  <span class="realm-icon">🔧</span>
-                  <div class="realm-particles">
-                    <span class="particle">✦</span>
-                    <span class="particle">✧</span>
-                    <span class="particle">✦</span>
-                  </div>
-                </div>
-                <div class="realm-info">
-                  <h4 class="realm-name">技术工具阁</h4>
-                  <p class="realm-desc">实用技术工具的探索与记录</p>
-                </div>
-                <div class="realm-action">
-                  <span class="action-text">进入领域</span>
-                  <span class="action-arrow">→</span>
-                </div>
-              </div>
-            </a>
-          
-            <a href="https://vivirainbows.github.io/frieren/cate/worldNews/index.html" class="realm-card" style="animation-delay: 0.56s">
-              <div class="realm-bg-pattern"></div>
-              <div class="realm-glow"></div>
-              <div class="realm-content">
-                <div class="realm-icon-wrapper">
-                  <span class="realm-icon">🌍</span>
-                  <div class="realm-particles">
-                    <span class="particle">✦</span>
-                    <span class="particle">✧</span>
-                    <span class="particle">✦</span>
-                  </div>
-                </div>
-                <div class="realm-info">
-                  <h4 class="realm-name">国际要闻厅</h4>
-                  <p class="realm-desc">洞察国际时事，把握全球脉动</p>
-                </div>
-                <div class="realm-action">
-                  <span class="action-text">进入领域</span>
-                  <span class="action-arrow">→</span>
-                </div>
-              </div>
-            </a>
-          
-      </div>
-    <footer class="frieren-footer">
+      </article>
+    </div>
+  <footer class="frieren-footer">
     <p>魔法是关于想象的艺术</p>
     <p class="made-with">Made with 🪄 🦞 & 🍙</p>
   </footer></div><div id="frieren-scroll-progress" style="position:fixed;top:0;left:0;width:0%;height:3px;background:linear-gradient(90deg,#9B7EBD,#00d9ff);z-index:9999;transition:width 0.1s ease;"></div><canvas id="frieren-particles" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas><script>
