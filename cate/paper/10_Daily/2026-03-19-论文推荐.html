@@ -1426,7 +1426,7 @@ li::marker {
 <ul>
 <li><p><strong>总体趋势</strong>：论文整体质量评分在 6.0-6.6 之间，涵盖大模型、多模态、机器人等多个热门方向。</p>
 </li>
-<li><p><strong>质量分布</strong>：评分区间 6.0-6.6，推荐优先阅读7.0+论文（前3篇）。</p>
+<li><p><strong>质量分布</strong>：评分区间 6.0-6.6，推荐优先阅读7.0+论文（前3篇含详细分析）。</p>
 </li>
 <li><p><strong>研究热点</strong>：</p>
 <ul>
@@ -1434,9 +1434,12 @@ li::marker {
 <li><strong>LLM</strong>、<strong>large language model</strong> 等技术持续火热</li>
 <li>视觉-语言融合成为重要方向</li>
 <li>智能体系统研究热度上升</li>
+<li>推理能力提升是核心诉求</li>
 </ul>
 </li>
-<li><p><strong>阅读建议</strong>：建议按评分从高到低阅读，前三篇论文包含详细分析和图片。</p>
+<li><p><strong>关键词分布</strong>：LLM / large language model / multimodal / image / generation</p>
+</li>
+<li><p><strong>阅读建议</strong>：前三篇论文包含详细分析和截图，建议优先阅读。</p>
 </li>
 </ul>
 <h3>1. Loc3R-VLM: Language-based Localization and 3D Reasoning with Vision-Language Models</h3>
@@ -1446,19 +1449,28 @@ li::marker {
 <li><strong>评分</strong>：⭐ 6.63 | 新近性: 3.0/3.0</li>
 <li><strong>领域</strong>：人工智能</li>
 <li><strong>匹配关键词</strong>：LLM, large language model, VLM, multimodal</li>
+<li><strong>详细分析</strong>：<a href="../20_Research/Papers/analysis/2603.18002_Loc3R-VLM_Language-based_Localization_and_3D_Reasoning_with_Vision-Language_Mode.md">查看完整分析</a></li>
 </ul>
 <p><img src="20_Research/Papers/images/2603.18002_fig1.jpeg" alt="Loc3R-VLM: Language-based Localization and 3D Reasoning with Vision-Language Models"></p>
-<p><strong>一句话总结</strong>：Multimodal Large Language Models (MLLMs) have made impressive progress in connecting vision and language, but they still struggle with spatial understanding and viewpoint-aware reasoning. Recent effor...</p>
-<p><strong>核心贡献/观点</strong>：</p>
+<p><strong>研究问题</strong>：</p>
 <ul>
 <li>Multimodal Large Language Models (MLLMs) have made impressive progress in connecting vision and language, but they still struggle with spatial understanding and viewpoint-aware reasoning</li>
-<li>Recent efforts aim to augment the input representations with geometric cues rather than explicitly teaching models to reason in 3D space</li>
+</ul>
+<p><strong>核心贡献</strong>：</p>
+<ul>
 <li>We introduce Loc3R-VLM, a framework that equips 2D Vision-Language Models with advanced 3D understanding capabilities from monocular video input</li>
 </ul>
 <p><strong>关键结果</strong>：</p>
 <ul>
 <li>Loc3R-VLM achieves state-of-the-art performance in language-based localization and outperforms existing 2D- and video-based approaches on situated and general 3D question-answering benchmarks, demonstrating that our spatial supervision framework enables strong 3D understanding</li>
 </ul>
+<p><strong>研究价值</strong>：</p>
+<ul>
+<li>达到了先进水平</li>
+<li>推动了大语言模型的发展</li>
+</ul>
+<p><strong>适用场景</strong>：图像/视频处理与生成</p>
+<p><strong>一句话总结</strong>：Multimodal Large Language Models (MLLMs) have made impressive progress in connecting vision and language, but they still struggle with spatial understanding and viewpoint-aware reasoning. Recent efforts aim to augment the input representations with g...</p>
 <hr>
 <h3>2. Interpretable Traffic Responsibility from Dashcam Video via Legal Multi Agent Reasoning</h3>
 <ul>
@@ -1467,19 +1479,27 @@ li::marker {
 <li><strong>评分</strong>：⭐ 6.50 | 新近性: 3.0/3.0</li>
 <li><strong>领域</strong>：多智能体系统</li>
 <li><strong>匹配关键词</strong>：multi-agent, agent, reasoning</li>
+<li><strong>详细分析</strong>：<a href="../20_Research/Papers/analysis/2603.17930_Interpretable_Traffic_Responsibility_from_Dashcam_Video_via_Legal_Multi_Agent_Re.md">查看完整分析</a></li>
 </ul>
 <p><img src="20_Research/Papers/images/2603.17930_fig1.png" alt="Interpretable Traffic Responsibility from Dashcam Video via Legal Multi Agent Reasoning"></p>
-<p><strong>一句话总结</strong>：The widespread adoption of dashcams has made video evidence in traffic accidents increasingly abundant, yet transforming &quot;what happened in the video&quot; into &quot;who is responsible under which legal provisi...</p>
-<p><strong>核心贡献/观点</strong>：</p>
+<p><strong>研究问题</strong>：</p>
 <ul>
 <li>Existing ego-view traffic accident studies mainly focus on perception and semantic understanding, while LLM-based legal methods are mostly built on textual case descriptions and rarely incorporate video evidence, leaving a clear gap between the two</li>
+</ul>
+<p><strong>核心贡献</strong>：</p>
+<ul>
 <li>On this basis, we introduce a two-stage framework: (1) a traffic accident understanding module that generates textual video descriptions; and (2) a legal multi-agent framework that outputs responsibility modes, statute sets, and complete judgment reports</li>
-<li>Experimental results on C-TRAIL and MM-AU show that our method outperforms general and legal LLMs, as well as existing agent-based approaches, while providing a transparent and interpretable legal reasoning process.</li>
 </ul>
 <p><strong>关键结果</strong>：</p>
 <ul>
 <li>Experimental results on C-TRAIL and MM-AU show that our method outperforms general and legal LLMs, as well as existing agent-based approaches, while providing a transparent and interpretable legal reasoning process.</li>
 </ul>
+<p><strong>研究价值</strong>：</p>
+<ul>
+<li>提供了有价值的探索方向</li>
+</ul>
+<p><strong>适用场景</strong>：图像/视频处理与生成</p>
+<p><strong>一句话总结</strong>：The widespread adoption of dashcams has made video evidence in traffic accidents increasingly abundant, yet transforming &quot;what happened in the video&quot; into &quot;who is responsible under which legal provisions&quot; still relies heavily on human experts. Existi...</p>
 <hr>
 <h3>3. EchoGen: Cycle-Consistent Learning for Unified Layout-Image Generation and Understanding</h3>
 <ul>
@@ -1488,20 +1508,29 @@ li::marker {
 <li><strong>评分</strong>：⭐ 6.37 | 新近性: 3.0/3.0</li>
 <li><strong>领域</strong>：计算机视觉</li>
 <li><strong>匹配关键词</strong>：vision, image, generation</li>
+<li><strong>详细分析</strong>：<a href="../20_Research/Papers/analysis/2603.18001_EchoGen_Cycle-Consistent_Learning_for_Unified_Layout-Image_Generation_and_Unders.md">查看完整分析</a></li>
 </ul>
 <p><img src="20_Research/Papers/images/2603.18001_fig1.jpeg" alt="EchoGen: Cycle-Consistent Learning for Unified Layout-Image Generation and Understanding"></p>
-<p><strong>一句话总结</strong>：In this work, we present EchoGen, a unified framework for layout-to-image generation and image grounding, capable of generating images with accurate layouts and high fidelity to text descriptions (e.g...</p>
-<p><strong>核心贡献/观点</strong>：</p>
+<p><strong>研究问题</strong>：</p>
+<ul>
+<li>However, we identify that this joint training paradigm encounters several optimization challenges and results in restricted performance</li>
+</ul>
+<p><strong>核心贡献</strong>：</p>
 <ul>
 <li>In this work, we present EchoGen, a unified framework for layout-to-image generation and image grounding, capable of generating images with accurate layouts and high fidelity to text descriptions (e.g., spatial relationships), while grounding the image robustly at the same time</li>
-<li>Jointly training both tasks within a unified model can promote performance improvements for each</li>
 <li>To address these issues, we propose progressive training strategies</li>
 </ul>
 <p><strong>关键结果</strong>：</p>
 <ul>
-<li>Jointly training both tasks within a unified model can promote performance improvements for each</li>
-<li>However, we identify that this joint training paradigm encounters several optimization challenges and results in restricted performance</li>
+<li>At the same time, images generated from layouts exhibit high diversity in content, thereby enhancing the robustness of image grounding</li>
 </ul>
+<p><strong>研究价值</strong>：</p>
+<ul>
+<li>统一了多个任务或方法</li>
+<li>达到了先进水平</li>
+</ul>
+<p><strong>适用场景</strong>：图像/视频处理与生成</p>
+<p><strong>一句话总结</strong>：In this work, we present EchoGen, a unified framework for layout-to-image generation and image grounding, capable of generating images with accurate layouts and high fidelity to text descriptions (e.g., spatial relationships), while grounding the ima...</p>
 <hr>
 <h3>4. LaDe: Unified Multi-Layered Graphic Media Generation and Decomposition</h3>
 <ul>
@@ -1510,8 +1539,17 @@ li::marker {
 <li><strong>评分</strong>：⭐ 6.27 | 新近性: 3.0/3.0</li>
 <li><strong>领域</strong>：人工智能</li>
 <li><strong>匹配关键词</strong>：LLM, transformer, GPT, VLM</li>
+<li><strong>技术定位</strong>：Transformer架构</li>
 </ul>
-<p><strong>一句话总结</strong>：Media design layer generation enables the creation of fully editable, layered design documents such as posters, flyers, and logos using only natural l...</p>
+<p><strong>核心贡献</strong>：</p>
+<ul>
+<li>We propose LaDe (Layered Media Design), a latent diffusion framework that generates a flexible number of semantically meaningful layers</li>
+</ul>
+<p><strong>关键结果</strong>：</p>
+<ul>
+<li>LaDe outperforms Qwen-Image-Layered in text-to-layers generation by improving text-to-layer alignment, as validated by two VLM-as-a-judge evaluators (GPT-4o mini and Qwen3-VL).</li>
+</ul>
+<p><strong>一句话总结</strong>：Media design layer generation enables the creation of fully editable, layered design documents such as posters, flyers, and logos using only natural language prompts. Existing meth...</p>
 <hr>
 <h3>5. VeriAgent: A Tool-Integrated Multi-Agent System with Evolving Memory for PPA-Aware RTL Code Generation</h3>
 <ul>
@@ -1520,8 +1558,15 @@ li::marker {
 <li><strong>评分</strong>：⭐ 6.27 | 新近性: 3.0/3.0</li>
 <li><strong>领域</strong>：多智能体系统</li>
 <li><strong>匹配关键词</strong>：multi-agent, agent, reasoning</li>
+<li><strong>技术定位</strong>：前沿探索性研究</li>
 </ul>
-<p><strong>一句话总结</strong>：LLMs have recently demonstrated strong capabilities in automatic RTL code generation, achieving high syntactic and functional correctness. However, mo...</p>
+<p><strong>核心贡献</strong>：</p>
+<ul>
+<li>In this work, we propose a PPA-aware, tool-integrated multi-agent framework for high-quality verilog code generation</li>
+<li>To support continuous improvement without model retraining, we introduce an \textit{Evolved Memory Mechanism} that externalizes optimization experience into structured memory nodes</li>
+</ul>
+<p><strong>关键结果</strong>：</p>
+<p><strong>一句话总结</strong>：LLMs have recently demonstrated strong capabilities in automatic RTL code generation, achieving high syntactic and functional correctness. However, most methods focus on functional...</p>
 <hr>
 <h3>6. RAMP: Reinforcement Adaptive Mixed Precision Quantization for Efficient On Device LLM Inference</h3>
 <ul>
@@ -1530,8 +1575,15 @@ li::marker {
 <li><strong>评分</strong>：⭐ 6.23 | 新近性: 3.0/3.0</li>
 <li><strong>领域</strong>：人工智能</li>
 <li><strong>匹配关键词</strong>：LLM, large language model, GPT</li>
+<li><strong>技术定位</strong>：推理与规划</li>
 </ul>
-<p><strong>一句话总结</strong>：Post training quantization is essential for deploying large language models (LLMs) on resource constrained hardware, yet state of the art methods enfo...</p>
+<p><strong>核心贡献</strong>：</p>
+<ul>
+<li>We present RAMP (Reinforcement Adaptive Mixed Precision), an off policy Soft Actor Critic framework that learns per layer bit width assignments to minimize perplexity under a global bit budget</li>
+<li>To enable stable sub 4 bit quantization, we introduce Scale Folding, a preconditioning technique that migrates activation outliers into weights via per channel scaling and normalization layer compensation</li>
+</ul>
+<p><strong>关键结果</strong>：</p>
+<p><strong>一句话总结</strong>：Post training quantization is essential for deploying large language models (LLMs) on resource constrained hardware, yet state of the art methods enforce uniform bit widths across ...</p>
 <hr>
 <h3>7. AgentVLN: Towards Agentic Vision-and-Language Navigation</h3>
 <ul>
@@ -1540,8 +1592,18 @@ li::marker {
 <li><strong>评分</strong>：⭐ 6.23 | 新近性: 3.0/3.0</li>
 <li><strong>领域</strong>：计算机视觉</li>
 <li><strong>匹配关键词</strong>：vision, image, generation</li>
+<li><strong>技术定位</strong>：前沿探索性研究</li>
 </ul>
-<p><strong>一句话总结</strong>：Vision-and-Language Navigation (VLN) requires an embodied agent to ground complex natural-language instructions into long-horizon navigation in unseen...</p>
+<p><strong>核心贡献</strong>：</p>
+<ul>
+<li>In this paper, we propose AgentVLN, a novel and efficient embodied navigation framework that can be deployed on edge computing platforms</li>
+<li>We formulate VLN as a Partially Observable Semi-Markov Decision Process (POSMDP) and introduce a VLM-as-Brain paradigm that decouples high-level semantic reasoning from perception and planning via a plug-and-play skill library</li>
+</ul>
+<p><strong>关键结果</strong>：</p>
+<ul>
+<li>Extensive experiments show that AgentVLN consistently outperforms prior state-of-the-art methods (SOTA) on long-horizon VLN benchmarks, offering a practical paradigm for lightweight deployment of next-generation embodied navigation models</li>
+</ul>
+<p><strong>一句话总结</strong>：Vision-and-Language Navigation (VLN) requires an embodied agent to ground complex natural-language instructions into long-horizon navigation in unseen environments. While Vision-La...</p>
 <hr>
 <h3>8. GMT: Goal-Conditioned Multimodal Transformer for 6-DOF Object Trajectory Synthesis in 3D Scenes</h3>
 <ul>
@@ -1550,8 +1612,17 @@ li::marker {
 <li><strong>评分</strong>：⭐ 6.10 | 新近性: 3.0/3.0</li>
 <li><strong>领域</strong>：人工智能</li>
 <li><strong>匹配关键词</strong>：transformer, multimodal</li>
+<li><strong>技术定位</strong>：Transformer架构 / 推理与规划</li>
 </ul>
-<p><strong>一句话总结</strong>：Synthesizing controllable 6-DOF object manipulation trajectories in 3D environments is essential for enabling robots to interact with complex scenes, ...</p>
+<p><strong>核心贡献</strong>：</p>
+<ul>
+<li>We present GMT, a multimodal transformer framework that generates realistic and goal-directed object trajectories by jointly leveraging 3D bounding box geometry, point cloud context, semantic object categories, and target end poses</li>
+</ul>
+<p><strong>关键结果</strong>：</p>
+<ul>
+<li>Extensive experiments on synthetic and real-world benchmarks demonstrate that GMT outperforms state-of-the-art human motion and human-object interaction baselines, such as CHOIS and GIMO, achieving substantial gains in spatial accuracy and orientation control</li>
+</ul>
+<p><strong>一句话总结</strong>：Synthesizing controllable 6-DOF object manipulation trajectories in 3D environments is essential for enabling robots to interact with complex scenes, yet remains challenging due to...</p>
 <hr>
 <h3>9. FrescoDiffusion: 4K Image-to-Video with Prior-Regularized Tiled Diffusion</h3>
 <ul>
@@ -1560,8 +1631,14 @@ li::marker {
 <li><strong>评分</strong>：⭐ 6.10 | 新近性: 3.0/3.0</li>
 <li><strong>领域</strong>：计算机视觉</li>
 <li><strong>匹配关键词</strong>：image, diffusion, generation</li>
+<li><strong>技术定位</strong>：扩散模型路线</li>
 </ul>
-<p><strong>一句话总结</strong>：Diffusion-based image-to-video (I2V) models are increasingly effective, yet they struggle to scale to ultra-high-resolution inputs (e.g., 4K). Generat...</p>
+<p><strong>核心贡献</strong>：</p>
+<ul>
+<li>We introduce FrescoDiffusion, a training-free method for coherent large-format I2V generation from a single complex image</li>
+</ul>
+<p><strong>关键结果</strong>：</p>
+<p><strong>一句话总结</strong>：Diffusion-based image-to-video (I2V) models are increasingly effective, yet they struggle to scale to ultra-high-resolution inputs (e.g., 4K). Generating videos at the model&#39;s nati...</p>
 <hr>
 <h3>10. Temporal Gains, Spatial Costs: Revisiting Video Fine-Tuning in Multimodal Large Language Models</h3>
 <ul>
@@ -1570,8 +1647,11 @@ li::marker {
 <li><strong>评分</strong>：⭐ 6.03 | 新近性: 3.0/3.0</li>
 <li><strong>领域</strong>：人工智能</li>
 <li><strong>匹配关键词</strong>：LLM, large language model, multimodal</li>
+<li><strong>技术定位</strong>：预训练-微调范式</li>
 </ul>
-<p><strong>一句话总结</strong>：Multimodal large language models (MLLMs) are typically trained in multiple stages, with video-based supervised fine-tuning (Video-SFT) serving as a ke...</p>
+<p><strong>核心贡献</strong>：</p>
+<p><strong>关键结果</strong>：</p>
+<p><strong>一句话总结</strong>：Multimodal large language models (MLLMs) are typically trained in multiple stages, with video-based supervised fine-tuning (Video-SFT) serving as a key step for improving visual un...</p>
 <hr>
 
         </div>
